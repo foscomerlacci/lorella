@@ -92,7 +92,7 @@ USE_MODELTRANSLATION = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 #
-ALLOWED_HOSTS = [foscomerlacci.pythonanywhere.com]
+ALLOWED_HOSTS = ["foscomerlacci.pythonanywhere.com"]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
