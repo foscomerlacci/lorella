@@ -15,13 +15,13 @@
 {{ page.description }}
 {% endmetablock %}{% endblock %}
 
-{% block title %}
-{% if page %}
-{% editable page.title %}{{ page.title }}{% endeditable %}
-{% else %}
-{% trans "Blog" %}
-{% endif %}
-{% endblock %}
+{#{% block title %}#}
+{#{% if page %}#}
+{#{% editable page.title %}{{ page.title }}{% endeditable %}#}
+{#{% else %}#}
+{#{% trans "Blog" %}#}
+{#{% endif %}#}
+{#{% endblock %}#}
 
 {% block breadcrumb_menu %}
 {{ block.super }}
