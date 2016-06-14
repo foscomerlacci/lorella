@@ -44,6 +44,8 @@
 <![endif]-->
 
 {% block extra_head %}{% endblock %}
+<link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Gruppo&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 
 <body id="{% block body_id %}body{% endblock %}">
@@ -53,10 +55,10 @@
 
     <ul class="breadcrumb">
     {% spaceless %}
-        {% ifinstalled mezzanine.mobile %}
-        <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
-        <span class="separator"> >>> </span>
-        {% endifinstalled %}
+{#        {% ifinstalled mezzanine.mobile %}#}
+{#        <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "versione mobile" %}</a>#}
+{#        <span class="separator"> </span>#}
+{#        {% endifinstalled %}#}
 
     {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
     {% endspaceless %}
@@ -80,8 +82,26 @@
 </div>
 
 <div class="navbar-collapse collapse">
-    {% block navbar_search_form %}{% search_form "all" %}{% endblock %}
+{#    {% block navbar_search_form %}{% search_form "all" %}{% endblock %}#}
     {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
+<div class="row">
+<p class="site-info text-center">
+
+
+    {% trans "Powered by" %}
+    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
+    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
+    {% trans "and" %}
+    <a href="http://www.djangoproject.com">Django</a>
+    <span class="separator">|</span>
+    {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
+    {% ifinstalled mezzanine.mobile %}
+    <span class="separator">|</span>
+    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
+    {% endifinstalled %}
+</p>
+
+</div>
 </div>
 </div>
 </div>
@@ -145,27 +165,27 @@
 </div>
 </div>
 
-<footer>
-<div class="container">
+{#<footer>#}
+{#<div class="container">#}
 {#{% page_menu "pages/menus/footer.html" %}#}
-
-<div class="row">
-<p class="site-info text-center">
-    {% trans "Powered by" %}
-    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
-    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
-    {% trans "and" %}
-    <a href="http://www.djangoproject.com">Django</a>
-    <span class="separator">|</span>
-    {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
+{##}
+{#<div class="row">#}
+{#<p class="site-info text-center">#}
+{#    {% trans "Powered by" %}#}
+{#    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},#}
+{#    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}#}
+{#    {% trans "and" %}#}
+{#    <a href="http://www.djangoproject.com">Django</a>#}
+{#    <span class="separator">|</span>#}
+{#    {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>#}
 {#    {% ifinstalled mezzanine.mobile %}#}
 {#    <span class="separator">|</span>#}
 {#    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>#}
 {#    {% endifinstalled %}#}
-</p>
-</div>
-</div>
-</footer>
+{#</p>#}
+{#</div>#}
+{#</div>#}
+{#</footer>#}
 
 {% block footer_js %}
 {% include "includes/footer_scripts.html" %}
