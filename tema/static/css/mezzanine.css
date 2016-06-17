@@ -486,5 +486,5 @@ float the buttons inside it. This prevents collapsing. */
   .navbar .container {width:970px;}
 }
 @media (min-width: 1200px) {
-  .navbar .container {width:1170px;}
+  .navbar .container {width:1190px;}
 }

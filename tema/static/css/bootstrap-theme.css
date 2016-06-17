@@ -265,6 +265,7 @@
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   border-radius: 0;
+  height: 70px;
 
 }
 .alert {
